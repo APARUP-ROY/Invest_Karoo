@@ -4,95 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invest Karoo AI Stock Tracker</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #f4f4f4;
-            color: #333;
-            display: flex;
-            flex-direction: column;
-            align-items: center; /* Center align items */
-        }
-        h1 {
-            text-align: center;
-            margin-bottom: 10px;
-        }
-        h2 {
-            text-align: center;
-            font-size: 1.2em;
-            margin-top: 0;
-            color: #555;
-            animation: growShrink 2s infinite; /* Animation applied here */
-        }
-        @keyframes growShrink {
-            0% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.2); /* Grow to 120% */
-            }
-            100% {
-                transform: scale(1); /* Shrink back to original */
-            }
-        }
-        #chartContainer {
-            margin-top: 20px;
-            max-width: 800px;
-            width: 100%; /* Make chart container responsive */
-        }
-        input[type="text"], select {
-            width: 300px; /* Fixed width for input and select */
-            padding: 8px; /* Smaller padding */
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 1em;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            transition: border-color 0.3s, box-shadow 0.3s;
-        }
-        input[type="text"]:focus, select:focus {
-            border-color: #28a745;
-            box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
-            outline: none;
-        }
-        button {
-            background-color: #28a745;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            padding: 8px 20px; /* Adjusted for a smaller button */
-            cursor: pointer;
-            font-size: 1em;
-            transition: background-color 0.3s, transform 0.3s;
-            margin-top: 10px;
-        }
-        button:hover {
-            background-color: #218838;
-            transform: translateY(-2px); /* Lift effect on hover */
-        }
-        button:active {
-            transform: translateY(1px); /* Slight push effect on click */
-        }
-        #stockPrice, #aiForecast {
-            font-size: 1.2em;
-            margin-top: 20px;
-            text-align: center;
-        }
-        footer {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 0.9em;
-            color: #666;
-        }
-    </style>
+    <link rel="stylesheet" href="dashboard.css"> <!-- Link to external CSS file -->
 </head>
 <body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="INVEST.png" alt="Invest Karoo Logo">
+            </div>
+            <ul>
+                <li><button id="home" onclick="home()">Home</button></li>
+                <li><button id="logoutButton" onclick="logout()">Logout</button></li> <!-- Logout button -->
+            </ul>
+        </nav>
+    </header>
+    
     <h1>Invest Karoo AI Stock Tracker</h1>
     <h2>Invest More, Earn More, Grow More!</h2>
+
+    <!-- Discord Widget -->
+    <div id="discordWidget" class="widget-container">
+        <iframe src="https://discord.com/widget?id=1296667623244697682&theme=dark" width="300" height="190" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+    </div>
 
     <!-- Stock Symbol Input -->
     <input type="text" id="stockSymbol" placeholder="Enter stock symbol (e.g., AAPL)" />
@@ -124,9 +57,36 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="dashboard.js"></script>
 
+    <script>
+        function logout() {
+            // Add your logout logic here
+            // For example, clearing the user's session or redirecting to the login page
+            alert("Logged out successfully!"); // Placeholder alert for logout action
+            window.location.href = "index.html"; // Redirect to home page or login page
+        }
+    </script>
+    <script>
+        function home() {
+            // Add your logout logic here
+            // For example, clearing the user's session or redirecting to the login page
+            alert("Leaving Soon 😔"); // Placeholder alert for logout action
+            window.location.href = "index.html"; // Redirect to home page or login page
+        }
+    </script>
+    <script type="text/javascript">
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+            s1.async=true;
+            s1.src='https://embed.tawk.to/6711f09b2480f5b4f58f5d13/1iaf17o4g';
+            s1.charset='UTF-8';
+            s1.setAttribute('crossorigin','*');
+            s0.parentNode.insertBefore(s1,s0);
+        })();
+    </script>
     <!-- Footer -->
     <footer>
-        Powered by Invest Karoo
+        Powered by Invest Karoo | Contact Us: karooinvest@gmail.com
     </footer>
 </body>
 </html>
