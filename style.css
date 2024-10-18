@@ -205,7 +205,6 @@ nav ul li a:hover {
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
-
 .reviews {
     padding: 20px;
     background-color: #ffffff; /* Light reviews section */
@@ -217,7 +216,7 @@ nav ul li a:hover {
 .review-container {
     overflow: hidden; /* Ensure that content doesn't overflow */
     position: relative; /* Allow absolute positioning for scrolling */
-    height: 100px; /* Set a height for review sections */
+    height: 150px; /* Increased height for better visibility */
 }
 
 .scrolling-reviews {
@@ -236,17 +235,44 @@ nav ul li a:hover {
 
 .review-box {
     min-width: 250px; /* Minimum width for each review box */
+    min-height: 80px; /* Minimum height to hold text and stars */
     background-color: #e1f7d5; /* Light gray for review boxes */
     border: 1px solid #ddd; /* Border for review boxes */
     border-radius: 10px; /* Rounded corners */
-    padding: 10px;
+    padding: 15px; /* Increased padding for more space */
     margin: 0 15px; /* Margin for spacing between boxes */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    transition: transform 0.3s; /* Smooth hover effect */
+}
+
+.review-box:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
 }
 
 .stars {
+    font-size: 20px; /* Increased font size for better visibility */
     color: #f39c12; /* Color for stars */
+    margin-top: 5px; /* Space above stars */
 }
+
+/* Animation for scrolling */
+@keyframes scroll {
+    0% { transform: translateX(100%); } /* Start off-screen */
+    100% { transform: translateX(-100%); } /* Move off-screen */
+}
+
+@keyframes scroll-left {
+    0% { transform: translateX(100%); } /* Start off-screen */
+    100% { transform: translateX(-100%); } /* Move off-screen */
+}
+
+@keyframes scroll-right {
+    0% { transform: translateX(-100%); } /* Start off-screen */
+    100% { transform: translateX(100%); } /* Move off-screen */
+}
+
+
+
 
 @keyframes scroll-left {
     from {
