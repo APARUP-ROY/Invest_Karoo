@@ -1,88 +1,207 @@
+/* Global Styles */
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Helvetica Neue', sans-serif;
+    background-color: #f0f2f5; /* Light background for a modern look */
     margin: 0;
+    padding: 0;
+    color: #333; /* Dark text for contrast */
+    text-align: center; /* Center text in the body */
+    animation: fadeIn 0.5s ease-in; /* Fade-in effect for the whole body */
+}
+
+/* Navbar Styles */
+header {
+    width: 100%; /* Full width */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Space between logo and links */
+    align-items: center;
     padding: 20px;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #ffffff; /* White background for navbar */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    position: sticky; /* Sticky navbar */
+    top: 0; /* Stick to the top */
+    z-index: 1000; /* Ensure it stays on top */
 }
+
+.logo {
+    flex-grow: 1; /* Allow logo to take remaining space */
+    display: flex;
+    justify-content: center; /* Center logo */
+}
+
+.logo img {
+    height: 207px;
+    width: 252px; /* Resize logo */
+}
+
+nav ul {
+    list-style: none;
+    display: flex; /* Flexbox for horizontal alignment */
+    padding: 0; /* Remove default padding */
+}
+
+nav ul li {
+    margin-left: 30px; /* Increased spacing between menu items */
+}
+
+nav ul li a {
+    color: #333; /* Dark color for links */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s; /* Smooth transition effect */
+}
+
+nav ul li a:hover {
+    color: #3498db; /* Change color on hover */
+}
+
+/* Main Content Styles */
 h1 {
-    text-align: center;
-    margin-bottom: 20px;
+    font-size: 2.5em; /* Large heading */
+    color: #2c3e50; /* Dark text color */
+    margin-top: 40px; /* Space above heading */
+    animation: slideIn 0.5s ease-out; /* Slide-in effect for main heading */
 }
-#chartContainer {
-    margin-top: 20px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+
+h2 {
+    font-size: 2em; /* Subheading size */
+    color: #2980b9; /* Bright color for subheading */
+    margin-top: 20px; /* Space above subheading */
+    animation: slideIn 0.7s ease-out; /* Slide-in effect for subheading */
 }
-input[type="text"], select, button {
-    width: calc(100% - 20px);
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+
+.widget-container {
+    margin: 20px auto; /* Center widget */
+    animation: fadeIn 0.5s ease-in; /* Fade-in effect for the widget */
 }
+
+input[type="text"],
+select {
+    padding: 10px; /* Padding for inputs and selects */
+    font-size: 1em; /* Font size */
+    border: 1px solid #ccc; /* Border */
+    border-radius: 5px; /* Rounded corners */
+    width: 300px; /* Fixed width */
+    margin: 10px auto; /* Center and space */
+    display: block; /* Make inputs block elements */
+    transition: border-color 0.3s; /* Transition for border color */
+}
+
+input[type="text"]:focus,
+select:focus {
+    border-color: #3498db; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+}
+
 button {
-    background-color: #28a745;
-    color: white;
-    border: none;
-    cursor: pointer;
+    padding: 10px 20px; /* Button padding */
+    background-color: #3498db; /* Button color */
+    color: white; /* Button text color */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1em; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    margin: 20px; /* Space around button */
+    transition: background-color 0.3s, transform 0.3s; /* Button transition */
 }
+
 button:hover {
-    background-color: #218838;
+    background-color: #2980b9; /* Darker blue on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
 }
+
+/* Stock Price Display */
 #stockPrice, #aiForecast {
-    font-size: 1.2em;
-    margin-top: 20px;
-    text-align: center;
+    margin-top: 20px; /* Space above price displays */
+    font-size: 1.5em; /* Larger font size */
+    animation: fadeIn 0.5s ease-in; /* Fade-in effect for price displays */
 }
+
+/* Chart Container */
+#chartContainer {
+    margin: 20px auto; /* Center chart */
+    width: 80%; /* Responsive width */
+    animation: fadeIn 0.5s ease-in; /* Fade-in effect for chart */
+}
+
+/* Footer Styles */
 footer {
-    text-align: center;
-    margin-top: 20px;
-    font-size: 0.9em;
-    color: #666;
+    background-color: #2c3e50; /* Dark footer */
+    color: white; /* White text */
+    text-align: center; /* Center text in footer */
+    padding: 20px; /* Padding for footer */
+    position: relative; /* Keep footer below content */
+    bottom: 0; /* Stick to bottom */
+    width: 100%; /* Full width */
 }
-body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 20px;
-    background-color: #f4f4f4;
-    color: #333;
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Start transparent */
+    }
+    to {
+        opacity: 1; /* End fully visible */
+    }
 }
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px); /* Start from above */
+        opacity: 0; /* Start transparent */
+    }
+    to {
+        transform: translateY(0); /* End at original position */
+        opacity: 1; /* End fully visible */
+    }
+}
+/* Main Content Styles */
 h1 {
-    text-align: center;
-    margin-bottom: 20px;
+    font-size: 2.5em; /* Large heading */
+    color: #2c3e50; /* Dark text color */
+    margin-top: 40px; /* Space above heading */
+    animation: slideIn 0.5s ease-out; /* Slide-in effect for main heading */
 }
-#chartContainer {
-    margin-top: 20px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+
+h2 {
+    font-size: 2em; /* Subheading size */
+    color: #2980b9; /* Bright color for subheading */
+    margin-top: 20px; /* Space above subheading */
+    animation: slideIn 0.7s ease-out; /* Slide-in effect for subheading */
+    animation: growShrink 2s infinite; /* Grow and shrink animation */
 }
-input[type="text"], select, button {
-    width: calc(100% - 20px);
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+
+/* Keyframes for Grow and Shrink Animation */
+@keyframes growShrink {
+    0% {
+        transform: scale(1); /* Start at original size */
+    }
+    50% {
+        transform: scale(1.1); /* Grow to 110% size */
+    }
+    100% {
+        transform: scale(1); /* Shrink back to original size */
+    }
 }
-button {
-    background-color: #28a745;
-    color: white;
-    border: none;
-    cursor: pointer;
+
+/* Add this if you want to make h2 fade in as well */
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Start transparent */
+    }
+    to {
+        opacity: 1; /* End fully visible */
+    }
 }
-button:hover {
-    background-color: #218838;
-}
-#stockPrice, #aiForecast {
-    font-size: 1.2em;
-    margin-top: 20px;
-    text-align: center;
-}
-footer {
-    text-align: center;
-    margin-top: 20px;
-    font-size: 0.9em;
-    color: #666;
+/* Widget Container Styles */
+.widget-container {
+    position: absolute; /* Fixed positioning */
+    top: 230px; /* Adjust this value based on the height of your navbar */
+    right: 20px; /* Distance from the right */
+    z-index: 1000; /* Ensures the widget stays above other elements */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Slight shadow for better visibility */
 }
